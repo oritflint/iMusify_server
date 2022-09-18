@@ -1,13 +1,13 @@
 
 const mongoose = require('mongoose')
-const MONGO_URL ="mongodb+srv://orelflint:Orit6165!@myserver.5xi6e.mongodb.net/playList?retryWrites=true&w=majority"
+const MONGO_URI =process.env.MONGO_URI
 
 
 //exports.connect = ()=> {}
 async function connect(){
     try{
         //console.log("dsfdsfsd",x)
-        await mongoose.connect(MONGO_URL,
+        await mongoose.connect(MONGO_URI,
             (err)=>{
                 if(err) throw err
             })
